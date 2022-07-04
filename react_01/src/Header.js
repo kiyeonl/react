@@ -1,9 +1,9 @@
 function Header() {
-  const leevar = <h2>나는 이창훈일까? 아닐까?</h2>;
+  const leevar = <h2>나는 바보인가????</h2>;
   return (
     <>
       {leevar}
-      <div>hahahaha</div>
+      <div></div>
     </>
 
   );
