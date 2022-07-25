@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .TabContent>div {
+            display: none;
+        }
+
+        .TabContent>div.on {
+            display: block;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="tab">
+        <ul class="TabMenu">
+            <li>menu01</li>
+            <li>menu02</li>
+            <li>menu03</li>
+        </ul>
+        <div class="TabContent">
+            <div class="on">content01</div>
+            <div>content02</div>
+            <div>content03</div>
+        </div>
+    </div>
+
+    <script>
+        const TLI = document.querySelectorAll('.TabMenu>li') //제이쿼리에서 $('.TabMenu>li')와 같은 뜻 (유사배열)을 만들었다
+        const TCO = document.querySelectorAll('.TabContent>div') //제이쿼리에서 $('.TabMenu>li')와 같은 뜻 (유사배열)을 만들었다
+        console.log(TLI);
+        TLI.forEach((el, idx) => {//foreach로 TLI의 요소들(엘리먼트)들과 idx를 가져와
+            el.addEventListener('click', () => {
+                TLI.forEach(el => el.classList.remove('on'));
+                el.classList.add('on');
+                TCO.forEach(el => el.classList.remove('on'));
+                TCO[idx].classList.add('on');
+            })
+        })
+    </script>
+</body>
+
+</html>

@@ -12,11 +12,11 @@ const App = () => {
   console.log(nextId.current);
 
   const onChange = (e) => {
-    const { name, value } = e.target
+    const { name, value } = e.target;
     setDodo({ id: nextId.current, [name]: value });
   }
 
-  const [todo, setDodo] = useState({ ...todoList });
+  const [todo, setDodo] = useState({});
 
 
   const onCleate = () => {

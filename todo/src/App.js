@@ -13,7 +13,7 @@ const App = () => {
 
   return (
     <Wrapper>
-      <TodoList todolist={todolist} />
+      <TodoList todolist={todolist} setTodolist={setTodolist} />
       <CreateTodolist todolist={todolist} setTodolist={setTodolist} />
     </Wrapper>
   )

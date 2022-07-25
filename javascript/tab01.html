@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>javascript 01 -tab</title>
+</head>
+
+<body>
+    <h1 id="h1"><span>여기를 클릭해줘...</span></h1>
+    <script>
+        // 1. 화살표 함수 : 불러올 수 없기 때문에 함수를 표현할 때 사용
+        // ghgh();
+        // function ghgh() {//함수에 이름이 있기 때문에 호이스팅(위에서 불러올 수 있는 기능)이 가능
+
+        // }
+
+        // const ghght = function () { }//무명함수기 때문에 호이스팅이 불가
+
+        // //this가 없는 화살표 함수
+        // const gogogo = (e) =>
+
+        const 화살표함수 = (e) => {
+            console.log(this, e.target, e.currentTarget)
+        }
+
+        h1.addEventListener('click', 화살표함수)
+
+        // 2. 스프레드 연산자
+
+        const 동물 = {
+            leg: 4,
+            mouse: 1,
+        }
+        const 말 = {
+            ...동물,
+            sound: '이히힝'
+        }
+        console.log(말.leg)
+        const 고양이 = {
+            leg: 4,
+            mouse: 1,
+            sound: '야옹'
+        }
+        const 강아지 = {
+            leg: 4,
+            mouse: 1,
+            sound: '멍멍'
+        }
+
+        const 그냥배열 = ['하나', '둘', '셋'];
+        //그냥배열.push('넷');//이렇게 배열에 추가할 수 있지만 다른사람과 데이터를 공유할 때 문제가 생길 수 있음
+        const 복사한배열 = [...그냥배열, '넷']; //그래서 원본 데이터에 복사해서 배열에 추가함 ->읽기만 하기 때문에 안전한 방법이다.
+        const 복사한배열2 = 그냥배열.concat(['다섯']);//원본 데이터에 복사해서 새배열을 만들어내느 방법2
+        console.log(복사한배열);
+        console.log(복사한배열2);
+        console.log(그냥배열);
+
+
+        // 3. 비구조 할당
+        const 그냥객체 = {
+            name: '객체',
+            age: 100,
+            color: "#f00"
+        }
+        const { age, color, name } = 그냥객체;
+
+        console.log(그냥객체.name);
+        console.log(그냥객체['name']);
+        console.log(name);
+
+
+        //4. 논리연산자를 이용한 if
+        let num = ' ';//빈문자열은 false를 반환함, 공간은 true
+        num && console.log('있음'); //num이 있다면 console에 있음을 찍어라
+        num || console.log('있음'); //num이 있거나 없다면(||는 또는 이라는 뜻) console에 있음을 찍어라
+
+        //5. 삼항연산자
+        num ? console.log('있음') : console.log('없음')
+
+    </script>
+
+</body>
+
+</html>
