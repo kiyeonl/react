@@ -1,0 +1,27 @@
+.Wrapper {
+  width: 400px;
+  margin: 20px auto;
+
+}
+
+.TopBanner .container {
+  background: #f7f7f7;
+  height: 120px;
+  overflow: hidden;
+  transition: 0.5s;
+}
+
+.TopBanner .container.on {
+  height: 0;
+
+}
+
+.TopBanner i {
+  cursor: pointer;
+  background: #f7f7f7;
+  padding: 5px;
+}
+
+.TopBanner .tg.on {
+  display: none;
+}
